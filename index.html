@@ -76,10 +76,10 @@
     }
     .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; color: var(--white); letter-spacing: 0.05em; }
     .nav-logo span { color: var(--gold); }
-    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links { display: flex; gap: 1.6rem; list-style: none; }
     .nav-links a {
-      color: rgba(255,255,255,0.75); font-size: 0.82rem; font-weight: 500;
-      letter-spacing: 0.08em; text-transform: uppercase; transition: color var(--trans);
+      color: rgba(255,255,255,0.75); font-size: 0.78rem; font-weight: 500;
+      letter-spacing: 0.07em; text-transform: uppercase; transition: color var(--trans);
     }
     .nav-links a:hover { color: var(--gold); }
     .hamburger {
@@ -189,8 +189,58 @@
       border: 1px solid #e5e7eb; text-transform: uppercase;
     }
 
+    /* ─── CERTIFICATIONS ──────────────────────────────── */
+    #certifications { background: var(--white); }
+    .cert-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .cert-card {
+      border: 1px solid #e5e7eb;
+      border-radius: var(--radius);
+      padding: 1.75rem;
+      background: var(--ivory);
+      transition: var(--trans);
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .cert-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--gold), var(--gold2));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform var(--trans);
+    }
+    .cert-card:hover { border-color: var(--gold); box-shadow: 0 8px 28px rgba(0,0,0,0.07); transform: translateY(-3px); }
+    .cert-card:hover::after { transform: scaleX(1); }
+    .cert-badge {
+      width: 44px; height: 44px; border-radius: 50%;
+      background: var(--navy); display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem; flex-shrink: 0;
+    }
+    .cert-issuer {
+      font-size: 0.68rem; font-weight: 500; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--gold);
+    }
+    .cert-card h3 { font-size: 1.05rem; color: var(--navy); line-height: 1.3; }
+    .cert-date {
+      font-size: 0.75rem; color: var(--muted); margin-top: auto;
+      display: flex; align-items: center; gap: 0.4rem;
+    }
+    .cert-date::before { content: '·'; color: var(--gold); }
+    .cert-link {
+      font-size: 0.72rem; font-weight: 500; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--navy);
+      border-bottom: 1px solid var(--gold); padding-bottom: 1px;
+      align-self: flex-start; transition: color var(--trans);
+    }
+    .cert-link:hover { color: var(--gold); }
+
     /* ─── PROJECTS ────────────────────────────────────── */
-    #projects { background: var(--white); }
+    #projects { background: var(--ivory); }
     .projects-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
     .project-card {
       border-radius: var(--radius); overflow: hidden;
@@ -231,10 +281,37 @@
     .timeline-company { font-size: 0.85rem; color: rgba(255,255,255,0.5); margin-bottom: 0.75rem; }
     .timeline-desc { font-size: 0.88rem; color: rgba(255,255,255,0.65); font-weight: 300; max-width: 580px; }
 
+    /* ─── KEY ACHIEVEMENTS ────────────────────────────── */
+    #achievements { background: var(--ivory); }
+    .achievements-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+    .achievement-card {
+      background: var(--white); border: 1px solid #e5e7eb;
+      border-radius: var(--radius); padding: 2rem;
+      display: flex; gap: 1.5rem; align-items: flex-start;
+      transition: var(--trans);
+    }
+    .achievement-card:hover { border-color: var(--gold); box-shadow: 0 8px 28px rgba(0,0,0,0.07); transform: translateY(-3px); }
+    .achievement-icon-wrap {
+      flex-shrink: 0;
+      width: 52px; height: 52px;
+      border-radius: var(--radius);
+      background: var(--navy);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem;
+      border: 1px solid rgba(201,168,76,0.2);
+    }
+    .achievement-body {}
+    .achievement-category {
+      font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--gold); font-weight: 500; margin-bottom: 0.35rem;
+    }
+    .achievement-body h3 { font-size: 1.15rem; color: var(--navy); margin-bottom: 0.4rem; }
+    .achievement-body p { font-size: 0.85rem; color: var(--muted); font-weight: 300; line-height: 1.6; }
+
     /* ─── BLOG ────────────────────────────────────────── */
-    #blog { background: var(--ivory); }
+    #blog { background: var(--white); }
     .blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
-    .blog-card { background: var(--white); border-radius: var(--radius); overflow: hidden; border: 1px solid #e5e7eb; transition: var(--trans); }
+    .blog-card { background: var(--ivory); border-radius: var(--radius); overflow: hidden; border: 1px solid #e5e7eb; transition: var(--trans); }
     .blog-card:hover { border-color: var(--gold); box-shadow: 0 8px 32px rgba(0,0,0,0.07); transform: translateY(-4px); }
     .blog-card-body { padding: 1.5rem; }
     .blog-meta { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.75rem; }
@@ -249,36 +326,39 @@
     .blog-read-more:hover { color: var(--gold); }
 
     /* ─── CONTACT ─────────────────────────────────────── */
-    #contact { background: var(--white); }
+    #contact { background: var(--navy); }
+    #contact .section-title { color: var(--white); }
+    #contact .section-label { color: var(--gold); }
     .contact-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 5rem; align-items: start; }
-    .contact-info h3 { font-size: 1.6rem; color: var(--navy); margin-bottom: 1rem; }
-    .contact-info p { color: var(--muted); font-weight: 300; margin-bottom: 2rem; }
+    .contact-info h3 { font-size: 1.6rem; color: var(--white); margin-bottom: 1rem; }
+    .contact-info p { color: rgba(255,255,255,0.55); font-weight: 300; margin-bottom: 2rem; }
     .contact-links { display: flex; flex-direction: column; gap: 1rem; }
-    .contact-link-item { display: flex; align-items: center; gap: 0.75rem; color: var(--navy); font-size: 0.9rem; transition: color var(--trans); }
+    .contact-link-item { display: flex; align-items: center; gap: 0.75rem; color: rgba(255,255,255,0.75); font-size: 0.9rem; transition: color var(--trans); }
     .contact-link-item:hover { color: var(--gold); }
     .contact-link-icon {
       width: 38px; height: 38px; border-radius: 50%;
-      background: var(--ivory); display: flex; align-items: center; justify-content: center;
-      font-size: 1.1rem; flex-shrink: 0; border: 1px solid #e5e7eb; transition: var(--trans);
+      background: rgba(255,255,255,0.07); display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem; flex-shrink: 0; border: 1px solid rgba(255,255,255,0.12); transition: var(--trans);
     }
     .contact-link-item:hover .contact-link-icon { background: var(--gold); border-color: var(--gold); }
     .contact-form { display: flex; flex-direction: column; gap: 1.25rem; }
     .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
-    .form-group label { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--navy); }
+    .form-group label { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.6); }
     .form-group input, .form-group textarea {
-      padding: 0.85rem 1rem; border: 1px solid #e5e7eb; border-radius: var(--radius);
-      font-family: 'DM Sans', sans-serif; font-size: 0.9rem; color: var(--text);
-      background: var(--ivory); transition: border-color var(--trans); resize: vertical; outline: none;
+      padding: 0.85rem 1rem; border: 1px solid rgba(255,255,255,0.12); border-radius: var(--radius);
+      font-family: 'DM Sans', sans-serif; font-size: 0.9rem; color: var(--white);
+      background: rgba(255,255,255,0.06); transition: border-color var(--trans); resize: vertical; outline: none;
     }
-    .form-group input:focus, .form-group textarea:focus { border-color: var(--gold); background: var(--white); }
+    .form-group input::placeholder, .form-group textarea::placeholder { color: rgba(255,255,255,0.3); }
+    .form-group input:focus, .form-group textarea:focus { border-color: var(--gold); background: rgba(255,255,255,0.1); }
     .form-group textarea { min-height: 140px; }
     .btn-submit {
-      align-self: flex-start; background: var(--navy); color: var(--white);
+      align-self: flex-start; background: var(--gold); color: var(--navy);
       padding: 0.85rem 2rem; font-size: 0.8rem; font-weight: 500;
       letter-spacing: 0.12em; text-transform: uppercase;
       border-radius: var(--radius); border: none; cursor: pointer; transition: var(--trans);
     }
-    .btn-submit:hover { background: var(--gold); color: var(--navy); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(201,168,76,0.3); }
+    .btn-submit:hover { background: var(--gold2); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(201,168,76,0.3); }
 
     /* ─── FOOTER ──────────────────────────────────────── */
     footer { background: var(--navy); border-top: 1px solid rgba(201,168,76,0.15); padding: 2.5rem 0; text-align: center; }
@@ -295,11 +375,14 @@
     .reveal.visible { opacity: 1; transform: translateY(0); }
 
     /* ─── RESPONSIVE ──────────────────────────────────── */
+    @media (max-width: 1000px) {
+      .cert-grid { grid-template-columns: repeat(2, 1fr); }
+    }
     @media (max-width: 900px) {
       .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
       .about-photo-wrap { max-width: 320px; }
       .projects-grid, .blog-grid { grid-template-columns: repeat(2, 1fr); }
-      .skills-grid { grid-template-columns: 1fr; }
+      .skills-grid, .achievements-grid { grid-template-columns: 1fr; }
     }
     @media (max-width: 640px) {
       .nav-links { display: none; }
@@ -310,22 +393,24 @@
         border-top: 1px solid rgba(201,168,76,0.15);
       }
       .hamburger { display: flex; }
-      .projects-grid, .blog-grid { grid-template-columns: 1fr; }
+      .projects-grid, .blog-grid, .cert-grid { grid-template-columns: 1fr; }
       .about-stats { flex-wrap: wrap; gap: 1.5rem; }
     }
   </style>
 </head>
 <body>
 
-  <!-- NAV -->
+  <!-- ─── NAV ──────────────────────────────────────────── -->
   <nav>
     <div class="nav-inner">
       <a href="#hero" class="nav-logo">Vamsi<span>Turaga</span></a>
       <ul class="nav-links" id="navLinks">
         <li><a href="#about">About</a></li>
         <li><a href="#skills">Skills</a></li>
+        <li><a href="#certifications">Certs</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#experience">Experience</a></li>
+        <li><a href="#achievements">Achievements</a></li>
         <li><a href="#blog">Blog</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -335,7 +420,7 @@
     </div>
   </nav>
 
-  <!-- HERO -->
+  <!-- ─── HERO ─────────────────────────────────────────── -->
   <section id="hero">
     <div class="hero-content">
       <p class="hero-eyebrow">Data Scientist &amp; Machine Learning Engineer</p>
@@ -352,31 +437,19 @@
     </div>
   </section>
 
-  <!-- ABOUT -->
+  <!-- ─── ABOUT ────────────────────────────────────────── -->
   <section id="about">
     <div class="container">
       <div class="about-grid">
         <div class="about-photo-wrap reveal">
           <div class="about-photo">
-            <!-- ✏️ Replace src with your photo: <img src="assets/photo.jpg" alt="Vamsi Turaga" /> 
-            <div class="photo-placeholder">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
-                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-                <circle cx="12" cy="7" r="4"/>
-              </svg>
-              
-              <span>Add Your Photo</span>
-            </div>
-            -->
-
-            <img src="assets/photo.jpg" alt="vamsi" />
+            <img src="assets/photo.jpg" alt="Vamsi Turaga" />
           </div>
         </div>
         <div class="about-text reveal">
           <p class="section-label">About Me</p>
           <h2 class="section-title">Hello, I'm Vamsi Turaga</h2>
           <div class="section-divider"></div>
-          <!-- ✏️ Replace the paragraphs below with your own bio -->
           <p>
             I am an aspiring Data Analyst and Data Science enthusiast with a strong interest in transforming raw data into actionable insights. Coming from a hands-on learning background, I enjoy working on real-world problems where data can drive smarter decisions and improve outcomes.
           </p>
@@ -390,7 +463,6 @@
             I am passionate about learning, building, and improving every day. My goal is to become a well-rounded data professional who can not only analyze data but also create impactful solutions that solve business problems.
           </p>
           <div class="about-stats">
-            <!-- ✏️ Replace X with your real numbers -->
             <div>
               <div class="stat-num">2<span>+</span></div>
               <div class="stat-label">Years Experience</div>
@@ -399,19 +471,13 @@
               <div class="stat-num">6<span>+</span></div>
               <div class="stat-label">Projects Delivered</div>
             </div>
-            <!--
-            <div>
-              <div class="stat-num">X<span>+</span></div>
-              <div class="stat-label">Publications</div>
-            </div>
-            -->
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SKILLS -->
+  <!-- ─── SKILLS ───────────────────────────────────────── -->
   <section id="skills">
     <div class="container">
       <p class="section-label reveal">What I Work With</p>
@@ -425,7 +491,7 @@
           <div class="skill-tags">
             <span class="tag">Python</span><span class="tag">R</span>
             <span class="tag">Pandas</span><span class="tag">NumPy</span>
-            <span class="tag">FastAPI</span><span class="tag">Jupyter</span>
+            <span class="tag">Selenium</span><span class="tag">Jupyter</span>
           </div>
         </div>
         <div class="skill-card reveal">
@@ -445,7 +511,7 @@
           <div class="skill-tags">
             <span class="tag">PostgreSQL</span><span class="tag">MySQL</span>
             <span class="tag">BigQuery</span><span class="tag">Snowflake</span>
-            <span class="tag">dbt</span><span class="tag">Redis</span>
+            <span class="tag">dbt</span><span class="tag">Excel</span>
           </div>
         </div>
         <div class="skill-card reveal">
@@ -453,16 +519,78 @@
           <h3>Data Visualization</h3>
           <p>Building dashboards and visual stories that communicate insights clearly to technical and non-technical stakeholders.</p>
           <div class="skill-tags">
-            <span class="tag">Tableau</span><span class="tag">Power BI</span>
+            <span class="tag">Power BI</span><span class="tag">Tableau</span>
             <span class="tag">Matplotlib</span><span class="tag">Plotly</span>
-            <span class="tag">Seaborn</span><span class="tag">D3.js</span>
+            <span class="tag">Seaborn</span>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- PROJECTS -->
+  <!-- ─── CERTIFICATIONS ────────────────────────────────── -->
+  <section id="certifications">
+    <div class="container">
+      <p class="section-label reveal">Credentials</p>
+      <h2 class="section-title reveal">Certifications</h2>
+      <div class="section-divider reveal"></div>
+      <div class="cert-grid">
+
+        <!-- ✏️ Replace each card with your real certifications -->
+        <div class="cert-card reveal">
+          <div class="cert-badge">🧠</div>
+          <div class="cert-issuer">Google</div>
+          <h3>Google Data Analytics Professional Certificate</h3>
+          <div class="cert-date">Issued Jan 2024</div>
+          <!-- ✏️ Replace href with your credential URL -->
+          <a href="#" target="_blank" class="cert-link">View Credential →</a>
+        </div>
+
+        <div class="cert-card reveal">
+          <div class="cert-badge">🐍</div>
+          <div class="cert-issuer">IBM</div>
+          <h3>IBM Data Science Professional Certificate</h3>
+          <div class="cert-date">Issued Mar 2024</div>
+          <a href="#" target="_blank" class="cert-link">View Credential →</a>
+        </div>
+
+        <div class="cert-card reveal">
+          <div class="cert-badge">📊</div>
+          <div class="cert-issuer">Microsoft</div>
+          <h3>Microsoft Power BI Data Analyst (PL-300)</h3>
+          <div class="cert-date">Issued Jun 2024</div>
+          <a href="#" target="_blank" class="cert-link">View Credential →</a>
+        </div>
+
+        <div class="cert-card reveal">
+          <div class="cert-badge">☁️</div>
+          <div class="cert-issuer">AWS</div>
+          <h3>AWS Certified Cloud Practitioner</h3>
+          <div class="cert-date">Issued Aug 2024</div>
+          <a href="#" target="_blank" class="cert-link">View Credential →</a>
+        </div>
+
+        <div class="cert-card reveal">
+          <div class="cert-badge">🤖</div>
+          <div class="cert-issuer">DeepLearning.AI</div>
+          <h3>Machine Learning Specialization</h3>
+          <div class="cert-date">Issued Oct 2024</div>
+          <a href="#" target="_blank" class="cert-link">View Credential →</a>
+        </div>
+
+        <div class="cert-card reveal">
+          <div class="cert-badge">🗄️</div>
+          <div class="cert-issuer">HackerRank</div>
+          <h3>SQL Advanced Certificate</h3>
+          <div class="cert-date">Issued Nov 2024</div>
+          <a href="#" target="_blank" class="cert-link">View Credential →</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── PROJECTS ──────────────────────────────────────── -->
   <section id="projects">
     <div class="container">
       <p class="section-label reveal">Selected Work</p>
@@ -483,7 +611,7 @@
               <span class="tag">Python</span><span class="tag">XGBoost</span><span class="tag">FastAPI</span>
             </div>
             <div class="project-links">
-              <a href="https://github.com/yourusername/project" target="_blank" class="project-link">GitHub →</a>
+              <a href="https://github.com/T-vamsi/project" target="_blank" class="project-link">GitHub →</a>
               <a href="#" class="project-link">Live Demo →</a>
             </div>
           </div>
@@ -501,7 +629,7 @@
               <span class="tag">PyTorch</span><span class="tag">HuggingFace</span><span class="tag">ONNX</span>
             </div>
             <div class="project-links">
-              <a href="https://github.com/yourusername/project" target="_blank" class="project-link">GitHub →</a>
+              <a href="https://github.com/T-vamsi/project" target="_blank" class="project-link">GitHub →</a>
               <a href="#" class="project-link">Live Demo →</a>
             </div>
           </div>
@@ -514,12 +642,12 @@
           <div class="project-body">
             <p class="project-category">Data Visualization</p>
             <h3>Executive Analytics Dashboard</h3>
-            <p>Interactive Tableau dashboard consolidating KPIs from 8 data sources, reducing reporting time from days to real-time.</p>
+            <p>Interactive Power BI dashboard consolidating KPIs from multiple data sources, reducing manual reporting time significantly.</p>
             <div class="skill-tags" style="margin-bottom:1rem">
-              <span class="tag">Tableau</span><span class="tag">SQL</span><span class="tag">dbt</span>
+              <span class="tag">Power BI</span><span class="tag">SQL</span><span class="tag">Python</span>
             </div>
             <div class="project-links">
-              <a href="https://github.com/yourusername/project" target="_blank" class="project-link">GitHub →</a>
+              <a href="https://github.com/T-vamsi/project" target="_blank" class="project-link">GitHub →</a>
               <a href="#" class="project-link">Live Demo →</a>
             </div>
           </div>
@@ -529,7 +657,7 @@
     </div>
   </section>
 
-  <!-- EXPERIENCE -->
+  <!-- ─── EXPERIENCE ────────────────────────────────────── -->
   <section id="experience">
     <div class="container">
       <p class="section-label reveal">Career</p>
@@ -537,35 +665,103 @@
       <div class="section-divider reveal"></div>
       <div class="timeline">
 
+        <!-- ✏️ Replace with your real experience -->
         <div class="timeline-item reveal">
           <div class="timeline-dot"></div>
           <p class="timeline-date">Jan 2023 — Present</p>
-          <h3 class="timeline-role">Senior Data Scientist</h3>
-          <p class="timeline-company">Company Name · City, Country</p>
-          <p class="timeline-desc">Lead ML initiatives across the product team, owning end-to-end model development from data collection to production. Reduced model latency by 60% through architecture optimization.</p>
-        </div>
-
-        <div class="timeline-item reveal">
-          <div class="timeline-dot"></div>
-          <p class="timeline-date">Jun 2021 — Dec 2022</p>
-          <h3 class="timeline-role">Data Scientist</h3>
-          <p class="timeline-company">Previous Company · City, Country</p>
-          <p class="timeline-desc">Developed and maintained predictive models for marketing and operations teams. Built automated pipelines with Airflow and dbt, improving data freshness from daily to near real-time.</p>
-        </div>
-
-        <div class="timeline-item reveal">
-          <div class="timeline-dot"></div>
-          <p class="timeline-date">2019 — 2021</p>
           <h3 class="timeline-role">Data Analyst</h3>
-          <p class="timeline-company">Another Company · City, Country</p>
-          <p class="timeline-desc">Created dashboards and reports for BI, conducted A/B test analysis, and supported data-driven product decisions across multiple teams.</p>
+          <p class="timeline-company">Company Name · Hyderabad, India</p>
+          <p class="timeline-desc">Analyzing complex datasets to surface actionable insights. Built automated reporting pipelines and dashboards using Python and Power BI, reducing manual effort by 40%.</p>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <p class="timeline-date">Jun 2022 — Dec 2022</p>
+          <h3 class="timeline-role">Data Science Intern</h3>
+          <p class="timeline-company">Previous Company · City, India</p>
+          <p class="timeline-desc">Assisted in building ML models for business forecasting. Performed data cleaning, feature engineering, and exploratory data analysis on real-world datasets.</p>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <p class="timeline-date">2019 — 2022</p>
+          <h3 class="timeline-role">B.Tech — Computer Science</h3>
+          <p class="timeline-company">Your University · City, India</p>
+          <p class="timeline-desc">Graduated with a focus on data structures, algorithms, databases, and machine learning fundamentals. Completed multiple academic projects in data analytics and full-stack development.</p>
         </div>
 
       </div>
     </div>
   </section>
 
-  <!-- BLOG -->
+  <!-- ─── KEY ACHIEVEMENTS ──────────────────────────────── -->
+  <section id="achievements">
+    <div class="container">
+      <p class="section-label reveal">Milestones</p>
+      <h2 class="section-title reveal">Key Achievements</h2>
+      <div class="section-divider reveal"></div>
+      <div class="achievements-grid">
+
+        <!-- ✏️ Replace each card with your real achievements -->
+        <div class="achievement-card reveal">
+          <div class="achievement-icon-wrap">🏆</div>
+          <div class="achievement-body">
+            <p class="achievement-category">Competition</p>
+            <h3>Top 10% in Kaggle Competition</h3>
+            <p>Ranked in the top 10% globally in a tabular data prediction competition, applying feature engineering and ensemble methods to achieve a high-accuracy result.</p>
+          </div>
+        </div>
+
+        <div class="achievement-card reveal">
+          <div class="achievement-icon-wrap">📉</div>
+          <div class="achievement-body">
+            <p class="achievement-category">Impact</p>
+            <h3>40% Reduction in Reporting Time</h3>
+            <p>Automated a manual weekly reporting workflow using Python and Power BI, saving 8+ hours of manual work per week across two business teams.</p>
+          </div>
+        </div>
+
+        <div class="achievement-card reveal">
+          <div class="achievement-icon-wrap">🌐</div>
+          <div class="achievement-body">
+            <p class="achievement-category">Open Source</p>
+            <h3>Published Data Scraping Toolkit</h3>
+            <p>Built and open-sourced a Selenium-based web scraping toolkit on GitHub, gaining 100+ stars and active usage by other developers in the community.</p>
+          </div>
+        </div>
+
+        <div class="achievement-card reveal">
+          <div class="achievement-icon-wrap">🎓</div>
+          <div class="achievement-body">
+            <p class="achievement-category">Recognition</p>
+            <h3>Best Project Award — Academic</h3>
+            <p>Received the Best Final Year Project award for a data-driven application that used ML to predict and visualize outcomes for a real-world use case.</p>
+          </div>
+        </div>
+
+        <div class="achievement-card reveal">
+          <div class="achievement-icon-wrap">🤝</div>
+          <div class="achievement-body">
+            <p class="achievement-category">Community</p>
+            <h3>Data Science Mentor</h3>
+            <p>Mentored 20+ junior learners on platforms like Discord and LinkedIn, helping them break into data analytics with structured guidance and project reviews.</p>
+          </div>
+        </div>
+
+        <div class="achievement-card reveal">
+          <div class="achievement-icon-wrap">📝</div>
+          <div class="achievement-body">
+            <p class="achievement-category">Writing</p>
+            <h3>500+ Followers on Medium / Blog</h3>
+            <p>Grew a technical blog audience by writing practical tutorials on Python, SQL, and data visualization — consistently ranked in top reads in the Data Science tag.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── BLOG ──────────────────────────────────────────── -->
   <section id="blog">
     <div class="container">
       <p class="section-label reveal">Writing</p>
@@ -584,18 +780,18 @@
 
         <div class="blog-card reveal">
           <div class="blog-card-body">
-            <p class="blog-meta"><span>Data Engineering</span> · Dec 4, 2024</p>
-            <h3>Building a Lightweight ML Pipeline with dbt and Python</h3>
-            <p>How to connect your feature store directly to your training pipeline without heavyweight orchestration frameworks.</p>
+            <p class="blog-meta"><span>Data Analytics</span> · Dec 4, 2024</p>
+            <h3>Building Automated Reports with Python and Power BI</h3>
+            <p>How to connect Python data pipelines directly to Power BI for near-real-time dashboard updates without manual intervention.</p>
             <a href="#" class="blog-read-more">Read Article →</a>
           </div>
         </div>
 
         <div class="blog-card reveal">
           <div class="blog-card-body">
-            <p class="blog-meta"><span>Deep Learning</span> · Oct 22, 2024</p>
-            <h3>Quantizing BERT for Production: A Step-by-Step Guide</h3>
-            <p>Walk-through of INT8 quantization using ONNX Runtime, achieving a 3× speedup with less than 1% accuracy drop.</p>
+            <p class="blog-meta"><span>Web Scraping</span> · Oct 22, 2024</p>
+            <h3>Scalable Web Scraping with Selenium and Python</h3>
+            <p>A step-by-step guide to building robust, production-ready scrapers that handle pagination, dynamic content, and anti-bot measures.</p>
             <a href="#" class="blog-read-more">Read Article →</a>
           </div>
         </div>
@@ -604,7 +800,7 @@
     </div>
   </section>
 
-  <!-- CONTACT -->
+  <!-- ─── CONTACT ───────────────────────────────────────── -->
   <section id="contact">
     <div class="container">
       <p class="section-label reveal">Let's Talk</p>
@@ -616,20 +812,18 @@
           <h3>Open to Opportunities</h3>
           <p>Whether you have a project in mind, a role to discuss, or just want to connect — my inbox is always open.</p>
           <div class="contact-links">
-            <!-- ✏️ Replace all placeholder links below -->
             <a href="mailto:vamsi.turaga09@gmail.com" class="contact-link-item">
               <div class="contact-link-icon">✉️</div>
               <span>vamsi.turaga09@gmail.com</span>
             </a>
             <a href="https://www.linkedin.com/in/vamsi-turaga/" target="_blank" class="contact-link-item">
               <div class="contact-link-icon">💼</div>
-              <span>linkedin.com/in/vamsi-turaga/</span>
+              <span>linkedin.com/in/vamsi-turaga</span>
             </a>
             <a href="https://github.com/T-vamsi" target="_blank" class="contact-link-item">
               <div class="contact-link-icon">⌨️</div>
               <span>github.com/T-vamsi</span>
             </a>
-            <!-- ✏️ Place your resume PDF at assets/resume.pdf -->
             <a href="assets/resume.pdf" download class="contact-link-item">
               <div class="contact-link-icon">📄</div>
               <span>Download Resume / CV</span>
@@ -638,11 +832,11 @@
         </div>
 
         <!--
-          ✏️ CONTACT FORM SETUP (free, 2 minutes):
-          1. Go to https://formspree.io and sign up
+          ✏️ CONTACT FORM — activate in 2 minutes (free):
+          1. Go to https://formspree.io → sign up
           2. Create a new form → copy your Form ID
-          3. Replace YOUR_FORM_ID in the action URL below -->
-      <!-- 
+          3. Replace YOUR_FORM_ID below, then remove the comment tags
+        -->
         <form class="contact-form reveal" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
           <div class="form-group">
             <label for="name">Name</label>
@@ -657,18 +851,17 @@
             <textarea id="message" name="message" placeholder="Tell me about your project or question…" required></textarea>
           </div>
           <button type="submit" class="btn-submit">Send Message</button>
-        </form>  
-        -->
+        </form>
 
       </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
+  <!-- ─── FOOTER ────────────────────────────────────────── -->
   <footer>
     <div class="container">
-      <div class="footer-logo">Your<span>Name</span></div>
-      <p>&copy; <span id="year"></span> · Data Scientist &amp; ML Engineer</p>
+      <div class="footer-logo">Vamsi<span>Turaga</span></div>
+      <p>&copy; <span id="year"></span> · Data Scientist &amp; ML Engineer · Hyderabad, India</p>
     </div>
   </footer>
 
