@@ -15,7 +15,6 @@ body {
   background: var(--bg);
   color: var(--text);
   font-family: 'IBM Plex Mono', monospace;
-  line-height: 1.6;
 }
 
 /* NAV */
@@ -45,9 +44,13 @@ body {
 .hero {
   height: 80vh;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
   padding: 0 50px;
+}
+
+.hero-text {
+  max-width: 50%;
 }
 
 .hero h2 {
@@ -58,6 +61,14 @@ body {
 .hero p {
   margin-top: 10px;
   opacity: 0.7;
+}
+
+.hero-image img {
+  width: 280px;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid var(--accent);
 }
 
 /* SECTION */
@@ -81,6 +92,17 @@ body {
   background: var(--card);
   padding: 15px;
   border-left: 3px solid var(--accent);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.skills-grid div:hover {
+  background: #1f1f1f;
+}
+
+/* CERTIFICATIONS */
+.cert-list li {
+  margin-bottom: 10px;
 }
 
 /* PROJECTS */
@@ -117,28 +139,13 @@ body {
 }
 
 /* CONTACT */
-form {
-  display: flex;
-  flex-direction: column;
-  max-width: 400px;
-}
-
-input, textarea {
-  margin-bottom: 10px;
-  padding: 10px;
-  background: #111;
-  border: 1px solid #333;
-  color: white;
-}
-
-button {
-  background: var(--accent);
-  border: none;
-  padding: 10px;
-  cursor: pointer;
-}
-
 .links a {
-  margin-right: 15px;
+  margin-right: 20px;
+  font-weight: bold;
   color: var(--accent);
+  transition: 0.3s;
+}
+
+.links a:hover {
+  text-decoration: underline;
 }
