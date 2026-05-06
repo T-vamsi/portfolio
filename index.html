@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <title>Data Scientist Portfolio</title>
+
   <link rel="stylesheet" href="styles.css">
+
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=IBM+Plex+Mono:wght@300;400&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -20,29 +22,52 @@
   </nav>
 </header>
 
+<!-- HERO -->
 <section class="hero">
-  <h2>Data Scientist & ML Engineer</h2>
-  <p>Building intelligent systems with data, precision & design.</p>
+  <div class="hero-text">
+    <h2>Data Scientist & ML Engineer</h2>
+    <p>Building intelligent systems with data, precision & design.</p>
+  </div>
+
+  <div class="hero-image">
+    <img src="your-image.jpg" alt="Profile Image">
+  </div>
 </section>
 
+<!-- ABOUT -->
 <section id="about" class="section">
   <h2>About Me</h2>
   <p>I design and deploy machine learning solutions, transforming raw data into actionable intelligence.</p>
 </section>
 
+<!-- SKILLS -->
 <section id="skills" class="section">
   <h2>Skills</h2>
+
   <div class="skills-grid">
-    <div>Python / R</div>
-    <div>SQL & Databases</div>
-    <div>Machine Learning</div>
-    <div>Deep Learning</div>
-    <div>Tableau / Power BI</div>
+    <div onclick="goToCerts()">Python / R</div>
+    <div onclick="goToCerts()">SQL & Databases</div>
+    <div onclick="goToCerts()">Machine Learning</div>
+    <div onclick="goToCerts()">Deep Learning</div>
+    <div onclick="goToCerts()">Tableau / Power BI</div>
   </div>
 </section>
 
+<!-- CERTIFICATIONS -->
+<section id="certifications" class="section">
+  <h2>Certifications</h2>
+
+  <ul class="cert-list">
+    <li>Machine Learning Certification – Coursera</li>
+    <li>Data Science Professional – IBM</li>
+    <li>SQL Advanced Certification</li>
+  </ul>
+</section>
+
+<!-- PROJECTS -->
 <section id="projects" class="section">
   <h2>Projects</h2>
+
   <div class="cards">
 
     <div class="card">
@@ -60,29 +85,28 @@
   </div>
 </section>
 
+<!-- EXPERIENCE -->
 <section id="experience" class="section">
   <h2>Experience</h2>
   <p>Worked on enterprise ML pipelines and cloud-based AI systems.</p>
   <a href="#" class="btn">Download Resume</a>
 </section>
 
+<!-- BLOG -->
 <section id="blog" class="section">
   <h2>Blog</h2>
   <p>Coming soon: Articles on ML, AI trends, and data systems.</p>
 </section>
 
+<!-- CONTACT -->
 <section id="contact" class="section">
   <h2>Contact</h2>
 
-  <form id="contactForm">
-    <input type="email" placeholder="Your Email" required>
-    <textarea placeholder="Your Message"></textarea>
-    <button type="submit">Send Message</button>
-  </form>
+  <p>Email: <a href="mailto:your@email.com">your@email.com</a></p>
 
   <div class="links">
-    <a href="#">GitHub</a>
-    <a href="#">LinkedIn</a>
+    <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+    <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
   </div>
 
 </section>
